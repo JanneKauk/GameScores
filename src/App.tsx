@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import axios from "axios";
-
+import styles from './App.module.css';
+import {Header} from "./Layout/Header";
 
 interface Game {
     title: string;
@@ -23,9 +25,10 @@ function App() {
     }
   return (
     <div className="App">
-      <header className="App-header">
-          Header
-      </header>
+      <Header title="LOGO" />
+        <Routes>
+            <Route path='/asd' element={<p>asd</p>} />
+        </Routes>
     </div>
   );
 }

@@ -1,0 +1,36 @@
+
+.searchdiv {
+ flex-basis: 80%;
+ margin: auto;
+}
+
+input {
+ min-width: 20rem;
+}
+
+nav {
+ /*margin: auto;*/
+ flex-basis: 10%;
+}
+
+nav a {
+ text-decoration: none;
+ color: white;
+ flex-basis: 10%;
+ margin: 0 1rem 0 0;
+
+}
+
+a:focus {
+ text-decoration: none;
+ color: blue;
+}
+a:active {
+ text-decoration: none;
+ color: red;
+}
+
+.title {
+ margin: 1rem;
+ flex-basis: 10%;
+}
