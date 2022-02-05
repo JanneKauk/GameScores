@@ -6,6 +6,7 @@ import styles from './App.module.css';
 import {Header} from "./Layout/Header";
 
 interface Game {
+    id: string;
     title: string;
     description: string;
 }
@@ -27,7 +28,7 @@ function App() {
     <div className="App">
       <Header title="LOGO" />
         <Routes>
-            <Route path='/asd' element={<p>asd</p>} />
+            <Route path='/asd' element={<ul>{games!.map(game => <li key={game.id}>{game.title} and {game.description} </li> )}</ul>} />
         </Routes>
     </div>
   );
