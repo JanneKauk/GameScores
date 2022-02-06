@@ -4,11 +4,12 @@ import './App.css';
 import axios from "axios";
 import styles from './App.module.css';
 import {Header} from "./Layout/Header";
+import {GameDetails} from "./pages/game/GameDetails";
 
 interface Game {
     id: string;
     title: string;
-    description: string;
+    Description: string;
 }
 
 function App() {
@@ -16,7 +17,6 @@ function App() {
 
     useEffect(() => {
         axios.get('http://localhost:3001/games').then(response => {
-            console.log("response");
             setGames(response.data);
         }
         ).catch(err => console.log(err.message))
@@ -28,7 +28,8 @@ function App() {
     <div className="App">
       <Header title="LOGO" />
         <Routes>
-            <Route path='/asd' element={<ul>{games!.map(game => <li key={game.id}>{game.title} and {game.description} </li> )}</ul>} />
+            <Route path='/asd' element={<ul>{games!.map(game => <li key={game.id}>Title: {game.title} / Description: {game.Description} </li> )}</ul>} />
+            <Route path='/gamedetails/:id' element={<GameDetails title="Game Details" />} />
         </Routes>
     </div>
   );

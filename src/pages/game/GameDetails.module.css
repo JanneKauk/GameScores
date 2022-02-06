@@ -1,0 +1,13 @@
+
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    align-items: center;
+}
+
+.main_title {
+    margin: 1rem;
+}
