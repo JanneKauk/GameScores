@@ -9,18 +9,10 @@ import List from "./components/GameList";
 
 function App() {
     const [games, setGames] = useState<IGame["games"]>([
-        {
-            Id: 1,
-            title: "Game title",
-            platforms: "pc",
-            imageUrl: "1",
-            Description: "description",
-            OverallScore: 9
-        }
     ]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/games').then(response => {
+        axios.get('http://localhost:3001/games/everything').then(response => {
                 setGames(response.data);
             }
         ).catch(err => console.log(err.message))
@@ -43,11 +35,22 @@ interface IGame {
     games: {
         Id: number;
         title: string;
-        platforms: string;
-        imageUrl: string;
+        platforms: plat[];
+        images: image;
         Description: string;
         OverallScore: number;
     }[]
+}
+
+interface plat {
+    Id: number;
+    Name: string;
+
+}
+
+interface image {
+    Id: number;
+    URL: string;
 }
 
 export default App;

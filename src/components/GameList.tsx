@@ -3,28 +3,54 @@ import '../GameList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Div from "./ScoreCircle";
 
+// interface IProps {
+//     games: {
+//         Id: number;
+//         title: string;
+//         platforms: string;
+//         imageUrl: string;
+//         Description: string;
+//         OverallScore: number;
+//     }[]
+// }
 interface IProps {
     games: {
         Id: number;
         title: string;
-        platforms: string;
-        imageUrl: string;
+        platforms: plat[];
+        images: image;
         Description: string;
         OverallScore: number;
     }[]
 }
 
-const List: React.FC<IProps> = ({ games }) => {
+interface plat {
+    Id: number;
+    Name: string;
+
+}
+
+interface image {
+    Id: number;
+    URL: string;
+}
+
+const List: React.FC<IProps> = ({games}) => {
     const renderList = (): JSX.Element[] => {
         return games.map(game => {
             return (
-                <li className={'list-group-item d-flex justify-content-between'}>
+                <li key={game.Id} className={'list-group-item d-flex justify-content-between'}>
                     <div style={{"display": "flex", "width": "100%"}}>
-                        <img className="list-image" src={game.imageUrl} alt={"Image of the game cover"}/>
+                        <img className="list-image" src={game.images.URL} alt={"Image of the game cover"}/>
                         <div className="container">
                             <h5 className="align-left">
                                 {game.title}<br/>
-                                {game.platforms}
+                                {game.platforms.map((platform) => {
+                                    if (game.platforms.slice(-1)[0].Name === platform.Name) {
+                                        return platform.Name
+                                    }
+                                    return platform.Name + ", "
+                                })}
                             </h5>
                         </div>
                         <p className="align-left">{game.Description}</p>
