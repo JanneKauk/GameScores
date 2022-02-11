@@ -22,10 +22,10 @@ const List: React.FC<IProps> = ({ games }) => {
                     <div style={{"display": "flex", "width": "100%"}}>
                         <img className="list-image" src={game.imageUrl} alt={"Image of the game cover"}/>
                         <div className="container">
-                            <h2 className="align-left">
+                            <h5 className="align-left">
                                 {game.title}<br/>
                                 {game.platforms}
-                            </h2>
+                            </h5>
                         </div>
                         <p className="align-left">{game.Description}</p>
 
