@@ -1,0 +1,48 @@
+
+.paginationholder{
+    margin: auto;
+}
+.page-item{
+    color: #DE004A;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    min-width: 5rem;
+    cursor: pointer;
+}
+.list-group{
+    box-shadow: 0px 0px 4px 0px #989898;
+    margin-top: 2rem;
+}
+
+.gamelist-container {
+    margin: 0 0 2.5rem 0;
+}
+
+.align-left{
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.list-image{
+    max-height: 150px;
+    margin: auto;
+}
+
+.list-group-item:hover{
+    background-color: #f5f5f5;
+}
+
+/*body {*/
+/*    background: #eee;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*}*/
+.container{
+    padding: 0.5rem;
+}
+
+.page-link{
+    color:#394fffde;
+}

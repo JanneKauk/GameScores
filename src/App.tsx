@@ -6,6 +6,7 @@ import {Header} from "./Layout/Header";
 import {GameDetails} from "./pages/game/GameDetails";
 import List from "./components/GameList";
 
+
 function App() {
     const [games, setGames] = useState<IGame["games"]>([
         {
@@ -31,12 +32,7 @@ function App() {
         <div className="App">
             <Header title="LOGO" />
             <Routes>
-                <Route path='/' element={
-                    <List games={games}/>
-                    // <ul>{games!.map(game =>
-                    //     <li key={game.id}>Title: {game.title} / Description: {game.description} </li> )}
-                    // </ul>
-                }/>
+                <Route path='/' element={<List games={games}/>}/>
                 <Route path='/gamedetails/:id' element={<GameDetails title="Game Details" />} />
             </Routes>
         </div>

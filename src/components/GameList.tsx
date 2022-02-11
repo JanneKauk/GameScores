@@ -1,4 +1,7 @@
 import React from "react";
+import '../GameList.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Div from "./ScoreCircle";
 
 interface IProps {
     games: {
@@ -15,13 +18,19 @@ const List: React.FC<IProps> = ({ games }) => {
     const renderList = (): JSX.Element[] => {
         return games.map(game => {
             return (
-                <li>
-                    <div>
-                        <img src={game.imageUrl} alt={"Image of the game cover"}/>
-                        <h2>{game.title}</h2>
-                        <p>{game.platforms}</p>
-                        <p>{game.Description}</p>
-                        <div>{game.OverallScore}</div>
+                <li className={'list-group-item d-flex justify-content-between'}>
+                    <div style={{"display": "flex", "width": "100%"}}>
+                        <img className="list-image" src={game.imageUrl} alt={"Image of the game cover"}/>
+                        <div className="container">
+                            <h2 className="align-left">
+                                {game.title}<br/>
+                                {game.platforms}
+                            </h2>
+                        </div>
+                        <p className="align-left">{game.Description}</p>
+
+                        {/*<span style={{"float": "right", "width": "50%" , "margin":"auto"}}>{game.OverallScore}</span>*/}
+                        <Div OverallScore={game.OverallScore}/>
                     </div>
                 </li>
             )
@@ -29,10 +38,15 @@ const List: React.FC<IProps> = ({ games }) => {
     }
 
     return (
-        <ul>
-            {renderList()}
-        </ul>
+        <div className="gamelist-container">
+            <div className="container">
+                <ul className="list-group">
+                    {renderList()}
+                </ul>
+            </div>
+        </div>
     )
 }
 
 export default List
+
