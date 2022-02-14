@@ -13,8 +13,8 @@ import Div from "./ScoreCircle";
 //         OverallScore: number;
 //     }[]
 // }
-interface IProps {
-    games: {
+interface Games {
+    game: {
         Id: number;
         title: string;
         platforms: plat[];
@@ -35,9 +35,9 @@ interface image {
     URL: string;
 }
 
-const List: React.FC<IProps> = ({games}) => {
+const List = ({game}: Games) => {
     const renderList = (): JSX.Element[] => {
-        return games.map(game => {
+        return game.map(game => {
             return (
                 <li key={game.Id} className={'list-group-item d-flex justify-content-between'}>
                     <div style={{"display": "flex", "width": "100%"}}>
@@ -56,7 +56,7 @@ const List: React.FC<IProps> = ({games}) => {
                         <p className="align-left">{game.Description}</p>
 
                         {/*<span style={{"float": "right", "width": "50%" , "margin":"auto"}}>{game.OverallScore}</span>*/}
-                        <Div OverallScore={game.OverallScore}/>
+                        <Div game={game}/>
                     </div>
                 </li>
             )

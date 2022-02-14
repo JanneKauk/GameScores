@@ -2,11 +2,29 @@ import React from "react";
 import '../circleFill.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-interface IProps{
-    OverallScore: number;
+interface plat {
+    Id: number;
+    Name: string;
+
 }
 
-const Div: React.FC<IProps> = ({OverallScore}): JSX.Element => {
+interface image {
+    Id: number;
+    URL: string;
+}
+
+interface IProps{
+    game: {
+        OverallScore: number;
+        Id: number;
+        title: string;
+        platforms: plat[];
+        images: image;
+        Description: string;
+    }
+}
+
+const Div: React.FC<IProps> = ({game}): JSX.Element => {
     return (
         <div className="container" style={{"width":"50%", margin:"0 0 0 2rem"}}>
             <div className="row">
@@ -18,7 +36,7 @@ const Div: React.FC<IProps> = ({OverallScore}): JSX.Element => {
                         <span className="progress-right">
                             <span className="progress-bar"></span>
                         </span>
-                        <div className="progress-value">{OverallScore}</div>
+                        <div className="progress-value">{game.OverallScore}</div>
                     </div>
                 </div>
             </div>
