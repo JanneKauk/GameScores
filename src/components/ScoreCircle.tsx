@@ -33,7 +33,7 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
     const renderList = (): JSX.Element => {
 
         return (
-            <div className="container center">
+            <div className="container center ">
                 <div className="rating" ref={ratingRef}>
                 <span>
                     {game.OverallScore}
@@ -57,7 +57,7 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
             let ratingScore = ratingContent*10;
 
             // Define if the score is good, meh or bad according to its value
-            let scoreClass = ratingScore < 40 ? "bad" : ratingScore < 60 ? "meh" : "good";
+            let scoreClass = ratingScore < 40 ? "bad" : ratingScore < 70 ? "meh" : "good";
 
             // Add score class to the rating
             ratingRef!.current!.classList.add(scoreClass);
@@ -84,7 +84,7 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
         })
 
     return (
-        <div >
+        <div className={"col-2"}>
             {renderList()}
         </div>
     )

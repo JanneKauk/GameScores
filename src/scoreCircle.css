@@ -1,7 +1,7 @@
 
 :root {
-    --rating-size: 10rem;
-    --bar-size: 1rem;
+    --rating-size: 6rem;
+    --bar-size: 0.5rem;
     --background-color: #e7f2fa;
     --rating-color-default: #2980b9;
     --rating-color-background: #c7e1f3;
@@ -13,6 +13,7 @@
 .center{
     display: flex;
     justify-content: center;
+    height: 100%;
 }
 
 /* Rating item */
@@ -23,7 +24,7 @@
     justify-content: center;
     border-radius: 100%;
     overflow: hidden;
-
+    margin: auto;
     background: var(--rating-color-default);
     color: var(--rating-color-default);
     width: var(--rating-size);
