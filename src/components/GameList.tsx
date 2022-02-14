@@ -1,7 +1,7 @@
 import React from "react";
 import '../GameList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Div from "./ScoreCircle";
+import ScoreCircle from "./ScoreCircle";
 
 // interface IProps {
 //     games: {
@@ -54,9 +54,7 @@ const List = ({game}: Games) => {
                             </h5>
                         </div>
                         <p className="align-left">{game.Description}</p>
-
-                        {/*<span style={{"float": "right", "width": "50%" , "margin":"auto"}}>{game.OverallScore}</span>*/}
-                        <Div game={game}/>
+                        <ScoreCircle game={game}/>
                     </div>
                 </li>
             )

@@ -8,8 +8,7 @@ import List from "./components/GameList";
 
 
 function App() {
-    const [games, setGames] = useState<Games["game"]>([
-    ]);
+    const [games, setGames] = useState<Games["game"]>([]);
 
     useEffect(() => {
         axios.get('http://localhost:3001/games/everything').then(response => {
@@ -20,15 +19,18 @@ function App() {
     if(games != null) {
         console.log(games);
     }
-    return (
-        <div className="App">
-            <Header title="LOGO" />
-            <Routes>
-                <Route path='/' element={<List game={games}/>}/>
-                <Route path='/gamedetails/:id' element={<GameDetails title="Game Details" />} />
-            </Routes>
-        </div>
-    );
+    if(games!.length > 0 && games!==null){
+        return (
+            <div className="App">
+                <Header title="LOGO" />
+                <Routes>
+                    <Route path='/' element={<List game={games}/>}/>
+                    <Route path='/gamedetails/:id' element={<GameDetails title="Game Details" />} />
+                </Routes>
+            </div>
+        );
+    }
+    return <div></div>;
 }
 
 interface Games {
