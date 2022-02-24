@@ -1,4 +1,4 @@
-import styles from './BaseCard.module.css';
+import styles from '../css/BaseCard.module.css';
 
 interface BaseCardProps {
     gameDetails: {

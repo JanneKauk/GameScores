@@ -1,5 +1,5 @@
 import React, {useLayoutEffect, useRef} from "react";
-import '../scoreCircle.css';
+import '../css/scoreCircle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface plat {

@@ -1,5 +1,5 @@
 import React from "react";
-import '../GameList.css';
+import '../css/GameList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ScoreCircle from "./ScoreCircle";
 
