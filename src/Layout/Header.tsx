@@ -17,8 +17,6 @@ export const Header = (props: HeaderProps) => {
                 <input type="search" />
             </div>
             <nav className={styles.nav}>
-                <NavLink to="/asd">Login/Signup</NavLink>
-                <NavLink to="/gamedetails/2">GameDetails</NavLink>
                 <button style={buttStyle} onClick={onClick}>Login/Signup</button>
                 {showMenu && <LoginMenu/>}
             </nav>
