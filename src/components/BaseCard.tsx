@@ -1,7 +1,9 @@
-import styles from './BaseCard.module.css';
+
 import React from "react";
 import ScoreCircle from "./ScoreCircle";
 import {game} from "../misc/interfaces";
+import styles from '../css/BaseCard.module.css';
+
 
 interface BaseCardProps {
     game: game

@@ -1,19 +1,9 @@
 import React from "react";
-import '../GameList.css';
+import '../css/GameList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ScoreCircle from "./ScoreCircle";
 import {game} from "../misc/interfaces";
 
-// interface IProps {
-//     games: {
-//         Id: number;
-//         title: string;
-//         platforms: string;
-//         imageUrl: string;
-//         Description: string;
-//         OverallScore: number;
-//     }[]
-// }
 interface Games {
     game: game[]
 }
@@ -25,9 +15,9 @@ const List = ({game}: Games) => {
             return (
                 <li key={game.Id} className={'list-group-item d-flex justify-content-between'} style={{maxHeight:"12rem"}}>
                     <div style={{"display": "flex", "width": "100%"}}>
+                        <img className="list-image" src={game.images.URL} alt={"Image of the game cover"}/>
                         <div className={"container d-flex col-3"}>
-                            <img className="list-image" src={game.images.URL} alt={"Image of the game cover"}/>
-                            <div className="container">
+                            <div className="container" style={{padding: "0 0 0 0"}}>
                                 <h5 className="align-left">
                                     {game.title}<br/>
                                     {game.platforms.map((platform) => {
@@ -39,7 +29,9 @@ const List = ({game}: Games) => {
                                 </h5>
                             </div>
                         </div>
-                        <p className="align-left col-6 hidden-text">{game.Description}</p>
+                        <div className="container d-flex col-6">
+                            <p className="align-left hidden-text">{game.Description}</p>
+                        </div>
                         <ScoreCircle game={game}/>
                     </div>
                 </li>

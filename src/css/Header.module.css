@@ -7,11 +7,14 @@
 input {
  height:2rem;
  min-height: 1.5rem;
- width: 35%;
+ width: 100%;
  min-width: 8rem;
  max-width: 30rem;
 }
-
+::placeholder{
+ color: #A4A4A4;
+ font-size: 16px;
+}
 nav {
  /*margin: auto;*/
  flex-basis: 10%;
@@ -37,4 +40,24 @@ a:active {
 .title {
  margin: 1rem;
  flex-basis: 10%;
+}
+.buttonLink{
+ background: none;
+ border: none;
+ color: #FF3A52;
+ font-size: 18px;
+ text-decoration: underline;
+ padding-left: 1rem;
+}
+.loginMenu{
+ border-radius: 5px;
+ background-color: #FFF;
+ border-style: solid;
+ border-color: #D6D6D6;
+ border-width: 1px;
+ box-shadow: 0 0 2px 0 #797979;
+ max-width: 375px;
+}
+label{
+ font-size: 18px;
 }

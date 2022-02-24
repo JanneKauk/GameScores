@@ -1,5 +1,5 @@
 import React, {useLayoutEffect, useRef} from "react";
-import '../scoreCircle.css';
+import '../css/scoreCircle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {game} from "../misc/interfaces";
 
@@ -10,15 +10,15 @@ interface IProps{
 
 
 const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
-        const ratingRef = useRef<HTMLDivElement>(null);
+    const ratingRef = useRef<HTMLDivElement>(null);
 
-        useLayoutEffect(() => {
-            console.log(ratingRef);
-        })
+    useLayoutEffect(() => {
+        console.log(ratingRef);
+    })
     const renderList = (): JSX.Element => {
 
         return (
-            <div className="container center ">
+            <div className="container d-flex center">
                 <div className="rating" ref={ratingRef}>
                 <span>
                     {game.OverallScore}
@@ -66,12 +66,12 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
         }
     }
 
-        useLayoutEffect(() => {
-            adjustScore();
-        })
+    useLayoutEffect(() => {
+        adjustScore();
+    })
 
     return (
-        <div className={"col-2"}>
+        <div className={"container d-flex col-2"}>
             {renderList()}
         </div>
     )

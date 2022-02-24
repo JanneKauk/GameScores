@@ -10,29 +10,31 @@
     cursor: pointer;
 }
 .list-group{
-    box-shadow: 0px 0px 4px 0px #989898;
+    box-shadow: 0 0 4px 0 #989898;
     margin-top: 2rem;
 }
-.hidden-text{
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: normal;
-    max-height: 100%;
-}
+
 .gamelist-container {
     margin: 0 0 2.5rem 0;
 }
 
 .align-left{
     text-align: left;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin: 0;
+    color: #FF3A52;
 }
 .list-image{
     max-height: 150px;
     margin: auto;
+    padding: 0.5rem 0 0.5rem 0;
 }
-
+.hidden-text{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: normal;
+    max-height: 100%;
+    color: #212529;
+}
 .list-group-item:hover{
     background-color: #f5f5f5;
 }

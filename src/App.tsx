@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
+import './css/App.css';
 import axios from "axios";
 import {Header} from "./Layout/Header";
 import {GameDetails} from "./pages/game/GameDetails";
