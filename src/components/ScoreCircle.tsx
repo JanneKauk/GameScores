@@ -1,28 +1,13 @@
 import React, {useLayoutEffect, useRef} from "react";
 import '../scoreCircle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {game} from "../misc/interfaces";
 
-interface plat {
-    Id: number;
-    Name: string;
-
-}
-
-interface image {
-    Id: number;
-    URL: string;
-}
 
 interface IProps{
-    game: {
-        OverallScore: number;
-        Id: number;
-        title: string;
-        platforms: plat[];
-        images: image;
-        Description: string;
-    }
+    game: game
 }
+
 
 const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
         const ratingRef = useRef<HTMLDivElement>(null);
@@ -45,34 +30,36 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
     }
 
     function adjustScore () {
-        console.log(ratingRef.current);
+        console.log("Current ref = " + ratingRef!.current!.innerText);
         console.log(ratingRef);
         console.log("ei menty ohi")
-        let temp;
         try {
-            temp = ratingRef.current;
+            if(ratingRef.current!.innerText === ""+game.OverallScore) {
 
-            // Get content and get score as an int
-            let ratingContent = game.OverallScore;
-            let ratingScore = ratingContent*10;
 
-            // Define if the score is good, meh or bad according to its value
-            let scoreClass = ratingScore < 40 ? "bad" : ratingScore < 70 ? "meh" : "good";
+                // Get content and get score as an int
+                let ratingContent = game.OverallScore;
+                let ratingScore = ratingContent * 10;
 
-            // Add score class to the rating
-            ratingRef!.current!.classList.add(scoreClass);
+                // Define if the score is good, meh or bad according to its value
+                let scoreClass = ratingScore < 40 ? "bad" : ratingScore < 70 ? "meh" : "good";
+                console.log(ratingScore);
 
-            // After adding the class, get its color
-            const ratingColor = window.getComputedStyle(ratingRef!.current!).backgroundColor;
+                // Add score class to the rating
+                ratingRef!.current!.classList.add(scoreClass);
 
-            // Define the background gradient according to the score and color
-            const gradient = `background: conic-gradient(${ratingColor} ${ratingScore}%, transparent 0 100%)`;
+                // After adding the class, get its color
+                const ratingColor = window.getComputedStyle(ratingRef!.current!).backgroundColor;
 
-            // Set the gradient as the rating background
-            ratingRef!.current!.setAttribute("style", gradient);
+                // Define the background gradient according to the score and color
+                const gradient = `background: conic-gradient(${ratingColor} ${ratingScore}%, transparent 0 100%)`;
 
-            // Wrap the content in a tag to show it above the pseudo element that masks the bar
-            ratingRef!.current!.innerHTML = `<span>${ratingScore}</span>`;
+                // Set the gradient as the rating background
+                ratingRef!.current!.setAttribute("style", gradient);
+
+                // Wrap the content in a tag to show it above the pseudo element that masks the bar
+                ratingRef!.current!.innerHTML = `<span>${ratingScore}</span>`;
+            }
         }catch (e){
             console.error(e);
             return;

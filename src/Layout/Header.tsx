@@ -15,6 +15,7 @@ export const Header = (props: HeaderProps) => {
             </div>
             <nav className={styles.nav}>
                 <NavLink to="/asd">Login/Signup</NavLink>
+                <NavLink to="/gamedetails/2">GameDetails</NavLink>
             </nav>
         </header>
     )

@@ -2,6 +2,7 @@ import React from "react";
 import '../GameList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ScoreCircle from "./ScoreCircle";
+import {game} from "../misc/interfaces";
 
 // interface IProps {
 //     games: {
@@ -14,26 +15,9 @@ import ScoreCircle from "./ScoreCircle";
 //     }[]
 // }
 interface Games {
-    game: {
-        Id: number;
-        title: string;
-        platforms: plat[];
-        images: image;
-        Description: string;
-        OverallScore: number;
-    }[]
+    game: game[]
 }
 
-interface plat {
-    Id: number;
-    Name: string;
-
-}
-
-interface image {
-    Id: number;
-    URL: string;
-}
 
 const List = ({game}: Games) => {
     const renderList = (): JSX.Element[] => {

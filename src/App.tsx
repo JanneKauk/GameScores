@@ -5,6 +5,7 @@ import axios from "axios";
 import {Header} from "./Layout/Header";
 import {GameDetails} from "./pages/game/GameDetails";
 import List from "./components/GameList";
+import {game} from "./misc/interfaces";
 
 
 function App() {
@@ -30,29 +31,12 @@ function App() {
             </div>
         );
     }
-    return <div></div>;
+    return <div>a</div>;
 }
 
 interface Games {
-    game: {
-        Id: number;
-        title: string;
-        platforms: plat[];
-        images: image;
-        Description: string;
-        OverallScore: number;
-    }[]
+    game: game[]
 }
 
-interface plat {
-    Id: number;
-    Name: string;
-
-}
-
-interface image {
-    Id: number;
-    URL: string;
-}
 
 export default App;

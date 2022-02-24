@@ -1,6 +1,26 @@
 .main {
     min-width: 18rem;
-    width: 50%;
+    width: 80%;
+    min-height: 30rem;
     box-shadow: 1px 1px 1px 1px #2d2c2c;
+    display: flex;
+    flex-flow: row;
+    /*align-items: flex-start;*/
+    justify-content: space-between;
+    /*justify-content: center;*/
+}
 
+.image {
+    align-self: center;
+    justify-self: flex-start;
+    margin: 1rem;
+}
+
+.image image {
+}
+
+.details {
+    margin: 2rem;
+    font-size: 2rem;
+    text-align: left;
 }
