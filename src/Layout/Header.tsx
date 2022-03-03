@@ -16,7 +16,7 @@ export const Header = (props: HeaderProps) => {
             <div className={styles.searchdiv} >
                 <input type="search" />
             </div>
-            <nav className={styles.nav}>
+            <nav className={styles.nav} style={{margin:"0 1rem 0 0"}}>
                 <button style={buttStyle} onClick={onClick}>Login/Signup</button>
                 {showMenu && <LoginMenu/>}
             </nav>
