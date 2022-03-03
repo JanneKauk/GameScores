@@ -1,0 +1,21 @@
+
+
+.reviewCard {
+    display: flex;
+    flex-flow: wrap column;
+    min-width: 100%;
+}
+
+
+.userinfo {
+    display: flex;
+    flex-flow: wrap column;
+    padding: 0 0 1rem 0;
+    margin: 0 0 0 2rem;
+}
+
+.above {
+    display: flex;
+    flex-flow: wrap row;
+    margin: 0 0 0 2rem;
+}
