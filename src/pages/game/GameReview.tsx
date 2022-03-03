@@ -1,6 +1,7 @@
 import {review} from "../../misc/interfaces";
 import ScoreCircle from "../../components/ScoreCircle";
 import React from "react";
+import styles from "../../css/GameReview.module.css";
 
 interface GameReviewProps {
     review: review;
@@ -9,21 +10,27 @@ interface GameReviewProps {
 export const GameReview = ({review}: GameReviewProps) => {
 
     return (
-        <li className={'list-group-item d-flex justify-content-between mt-5'} style={{maxHeight:"12rem"}}>
-            <div key={review.id} style={{"display": "flex", "width": "100%"}}>
-                <div className={"container d-flex col-3"}>
-                    <div className="container">
-                        <h1>
-                            {review.ReviewTitle}
-                        </h1>
-                        <h5 className="align-left">
-                            {review.ReviewText}<br/>
-                        </h5>
+        <li className={'list-group-item d-flex justify-content-evenly mt-3 mb-3'} style={{minHeight:"12rem", width: "70vw"}}>
+                <div className={styles.reviewCard}>
+                    <div className={styles.above} >
+                        <p className="align-left col-6 hidden-text w-25">{"Score " + review.ReviewScore}</p>
+                        <div className={styles.userinfo} >
+                            <h5>
+                                {review.username}
+                            </h5>
+                            <span>20.02.2022</span>
+                        </div>
                     </div>
+                        <h2 className="align-left">
+                            {review.ReviewTitle}
+                        </h2>
+                        <p className="align-left">
+                            {review.ReviewText}<br/>
+                        </p>
                 </div>
-                <p className="align-left col-6 hidden-text">{review.ReviewScore}</p>
-                {/*<ScoreCircle game={game}/>*/}
-            </div>
+            {/*<div key={review.id} style={{"display": "flex", "flexDirection": "row", "width": "70vw"}}>*/}
+            {/*    /!*<ScoreCircle game={game}/>*!/*/}
+            {/*</div>*/}
         </li>
 
     )

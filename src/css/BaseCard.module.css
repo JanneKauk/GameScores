@@ -4,23 +4,117 @@
     min-height: 30rem;
     box-shadow: 1px 1px 1px 1px #2d2c2c;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     /*align-items: flex-start;*/
     justify-content: space-between;
     /*justify-content: center;*/
 }
 
+.main_details {
+    min-width: 18rem;
+    width: 100%;
+    min-height: 30rem;
+    /*box-shadow: 1px 1px 1px 1px #2d2c2c;*/
+    display: flex;
+    flex-flow: wrap row;
+    align-items: flex-start;
+    justify-content: space-between;
+    /*justify-content: center;*/
+}
+
 .image {
-    align-self: center;
+    align-self: auto;
     justify-self: flex-start;
     margin: 1rem;
 }
 
-.image image {
+.listimage {
+    width: 250px;
 }
 
 .details {
     margin: 2rem;
-    font-size: 2rem;
+    font-size: 22px;
     text-align: left;
+    width: 60%;
+
 }
+.video {
+    align-self: flex-start;
+    margin: 1rem;
+    width: 50%;
+}
+.video iframe {
+    max-height: 30vh;
+    height: calc(20vh + 6vw);
+    min-width: 15rem;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 700px) {
+    .details {
+        margin: 2rem;
+        font-size: 22px;
+        text-align: left;
+        width: 100%;
+    }
+    .video {
+        align-self: flex-start;
+        margin: 1rem;
+        width: 100%;
+    }
+    .video iframe {
+        max-height: 30vh;
+        height: calc(20vh + 6vw);
+        min-width: 15rem;
+        width: 50%;
+    }
+}
+
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+    .details {
+        margin: 2rem;
+        font-size: 22px;
+        text-align: left;
+        width: 70%;
+    }
+    .video {
+        align-self: flex-start;
+        margin: 1rem;
+        width: 100%;
+    }
+    .video iframe {
+        max-height: 30vh;
+        height: calc(20vh + 6vw);
+        min-width: 15rem;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .details {
+        margin: 2rem;
+        font-size: 22px;
+        text-align: left;
+        width: 40%;
+    }
+}
+
+.title {
+    color: #FF3A52;
+}
+
+.platforms {
+    color: #FF3A52;
+}
+
+.release {
+    color: #FF3A52;
+}
+
+.summary {
+    color: #FF3A52;
+}
+

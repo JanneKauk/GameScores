@@ -13,8 +13,8 @@ export interface review {
     ReviewTitle: string;
     ReviewText: string;
     ReviewScore: number;
+    username: string;
     gameId: number;
-    userId: number;
 }
 
 interface plat {

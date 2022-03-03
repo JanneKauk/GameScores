@@ -7,6 +7,7 @@ import {review} from "../../misc/interfaces";
 
 import styles from './GameDetails.module.css';
 import {GameReview} from "./GameReview";
+import {AddReview} from "./AddReview";
 
 interface GameDetailsProps {
     title: string;
@@ -40,10 +41,13 @@ export const GameDetails = ({title}: GameDetailsProps) => {
             setReviews(response.data);
         })
     }, [parameter.id])
+
+    console.log("reviews here " + reviews);
     return (
         <section className={styles.main}>
-            <div className={styles.main_title} >{title}</div>
+            {/*<div className={styles.main_title} >{title}</div>*/}
             {game && <BaseCard game={game}  />}
+            <AddReview />
             {reviews && reviews.map(review => { return <GameReview key={review.id} review={review} />})}
         </section>
     )
