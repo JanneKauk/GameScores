@@ -13,7 +13,7 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
     const ratingRef = useRef<HTMLDivElement>(null);
 
     useLayoutEffect(() => {
-        console.log(ratingRef);
+        // console.log(ratingRef);
     })
     const renderList = (): JSX.Element => {
 
@@ -30,9 +30,9 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
     }
 
     function adjustScore () {
-        console.log("Current ref = " + ratingRef!.current!.innerText);
-        console.log(ratingRef);
-        console.log("ei menty ohi")
+        // console.log("Current ref = " + ratingRef!.current!.innerText);
+        // console.log(ratingRef);
+        // console.log("ei menty ohi")
         try {
             if(ratingRef.current!.innerText === ""+game.OverallScore) {
 
@@ -43,7 +43,7 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
 
                 // Define if the score is good, meh or bad according to its value
                 let scoreClass = ratingScore < 40 ? "bad" : ratingScore < 70 ? "meh" : "good";
-                console.log(ratingScore);
+                // console.log(ratingScore);
 
                 // Add score class to the rating
                 ratingRef!.current!.classList.add(scoreClass);

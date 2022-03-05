@@ -3,15 +3,16 @@ import '../css/GameList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ScoreCircle from "./ScoreCircle";
 import {game} from "../misc/interfaces";
-
-interface Games {
-    game: game[]
-}
+import Pagination from "./Pagination";
+// import styles = module
 
 
-const List = ({game}: Games) => {
+// @ts-ignore
+const List = ({games: game, setPage, page, gameCount}) => {
+    const gamesPerPage = 20
+
     const renderList = (): JSX.Element[] => {
-        return game.map(game => {
+        return game.map((game: game) => {
             return (
                 <li key={game.Id} className={'list-group-item d-flex justify-content-between'} style={{maxHeight:"12rem"}}>
                     <div style={{"display": "flex", "width": "100%"}}>
@@ -38,13 +39,14 @@ const List = ({game}: Games) => {
             )
         })
     }
-
     return (
         <div className="gamelist-container">
             <div className="container">
+                <Pagination pages={Math.ceil(gameCount/gamesPerPage)} setPage={setPage} page={page}/>
                 <ul className="list-group">
                     {renderList()}
                 </ul>
+                <Pagination pages={Math.ceil(gameCount/gamesPerPage)} setPage={setPage} page={page}/>
             </div>
         </div>
     )
