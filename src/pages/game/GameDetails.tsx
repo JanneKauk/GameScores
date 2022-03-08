@@ -47,7 +47,7 @@ export const GameDetails = ({title}: GameDetailsProps) => {
         <section className={styles.main}>
             {/*<div className={styles.main_title} >{title}</div>*/}
             {game && <BaseCard game={game}  />}
-            <AddReview />
+            {game && <AddReview gameId={game!.Id}/>}
             {reviews && reviews.map(review => { return <GameReview key={review.id} review={review} />})}
         </section>
     )
