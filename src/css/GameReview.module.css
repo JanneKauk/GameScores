@@ -1,8 +1,4 @@
 
-li {
-    box-shadow: 1px 1px 1px 1px #2d2c2c;
-}
-
 .reviewCard {
     display: flex;
     flex-flow: wrap column;

@@ -10,7 +10,7 @@ interface GameReviewProps {
 export const GameReview = ({review}: GameReviewProps) => {
 
     return (
-        <li className={'list-group-item d-flex justify-content-evenly mt-3 mb-3'} style={{minHeight:"12rem", width: "70vw"}}>
+        <li className={'list-group-item d-flex justify-content-evenly mt-3 mb-3 box-shadow: 1px 1px 1px 1px #2d2c2c;'} style={{minHeight:"12rem", width: "70vw"}}>
                 <div className={styles.reviewCard}>
                     <div className={styles.above} >
                         <p className="align-left col-6 hidden-text w-25">{"Score " + review.ReviewScore}</p>
