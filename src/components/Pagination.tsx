@@ -32,7 +32,8 @@ const Pagination = ({pages, setPage, page}) =>{
 }
 
 const bttStyle: CSS.Properties = {
-     margin:"0"
+    margin:"0",
+    color:"#FF3A52"
 }
 
 export default Pagination
