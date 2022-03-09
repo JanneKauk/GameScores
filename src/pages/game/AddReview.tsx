@@ -22,17 +22,26 @@ export const AddReview = ({gameId}: AddReviewProps) => {
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         event.stopPropagation();
+        const token: string =  sessionStorage!.getItem('token')!;
+
         console.log(title, "and", text);
         console.log("gameid " + gameId)
+        console.log(token);
         const rew: IReview = {
             ReviewTitle: title,
             ReviewText: text,
-            ReviewScore: 10,
+            ReviewScore: 9,
             userId: 3,
-            gameId: gameId
+            gameId: gameId,
         }
         console.log(rew);
-        axios.post('http://localhost:3001/games/addreview', rew
+        axios.post('http://localhost:3001/games/addreview', rew,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                }
+            }
         ).then((response) => {
                 console.log(response);
                 setTitle('');

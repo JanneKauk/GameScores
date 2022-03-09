@@ -11,7 +11,7 @@ interface BaseCardProps {
 
 export const BaseCard = ({game}: BaseCardProps) => {
 
-    console.log("Score.... = " + game.OverallScore);
+    console.log("Score.... = " + game.avgscores);
     return (
         <section className={styles.main}>
 

@@ -10,7 +10,7 @@ import Pagination from "./Pagination";
 // @ts-ignore
 const List = ({games: game, setPage, page, gameCount}) => {
     const gamesPerPage = 20
-
+    console.log("game avg: " + game[0].avgscores);
     const renderList = (): JSX.Element[] => {
         return game.map((game: game) => {
             return (

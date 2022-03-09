@@ -21,7 +21,7 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
             <div className="container d-flex center">
                 <div className="rating" ref={ratingRef}>
                 <span>
-                    {game.OverallScore}
+                    {game.avgscores}
                     {/*{adjustScore()}*/}
                 </span>
                 </div>
@@ -34,11 +34,11 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
         // console.log(ratingRef);
         // console.log("ei menty ohi")
         try {
-            if(ratingRef.current!.innerText === ""+game.OverallScore) {
+            if(ratingRef.current!.innerText === ""+game.avgscores) {
 
 
                 // Get content and get score as an int
-                let ratingContent = game.OverallScore;
+                let ratingContent = game.avgscores;
                 let ratingScore = ratingContent * 10;
 
                 // Define if the score is good, meh or bad according to its value

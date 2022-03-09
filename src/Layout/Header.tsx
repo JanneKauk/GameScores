@@ -6,6 +6,7 @@ import LoginMenu from "../components/LoginMenu";
 
 interface HeaderProps {
     title: string;
+    username: string;
 }
 export const Header = (props: HeaderProps) => {
     const [showMenu, setShow] = useState(false)
@@ -17,7 +18,8 @@ export const Header = (props: HeaderProps) => {
                 <input type="search" />
             </div>
             <nav className={styles.nav} style={{margin:"0 1rem 0 0"}}>
-                <button style={buttStyle} onClick={onClick}>Login/Signup</button>
+                {props.username.length === 0 && <button style={buttStyle} onClick={onClick}>Login/Signup</button>}
+                {props.username.length > 0 && <button style={buttStyle}>{props.username}</button>}
                 {showMenu && <LoginMenu/>}
             </nav>
         </header>

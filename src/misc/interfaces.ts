@@ -5,7 +5,7 @@ export interface game {
     images: image;
     ReleaseDate: string;
     Description: string;
-    OverallScore: number;
+    avgscores: number;
 }
 
 export interface review {
