@@ -2,8 +2,9 @@
     min-width: 18rem;
     width: 80%;
     min-height: 30rem;
-    box-shadow: 1px 1px 1px 1px #2d2c2c;
+    box-shadow: 0 0 4px 0 #989898;
     display: flex;
+    border-radius: 4px;
     flex-flow: column;
     /*align-items: flex-start;*/
     justify-content: space-between;

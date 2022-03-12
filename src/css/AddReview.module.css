@@ -5,8 +5,9 @@
     flex-flow: wrap column;
     width: 70vw;
     margin: 1.2rem 0 0 0;
-    border: 1px solid black;
-    box-shadow: 1px 1px black;
+    border: 0px solid black;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0 #989898;
 }
 
 .input {

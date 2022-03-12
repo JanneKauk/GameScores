@@ -18,6 +18,7 @@ interface IReview {
 export const AddReview = ({gameId}: AddReviewProps) => {
     const [title, setTitle] = useState<string>('');
     const [text, setText] = useState<string>('');
+    const [score, setScore] = useState<any>('');
 
     const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -31,7 +32,7 @@ export const AddReview = ({gameId}: AddReviewProps) => {
             ReviewTitle: title,
             ReviewText: text,
             ReviewScore: 9,
-            userId: 3,
+            userId: score as number,
             gameId: gameId,
         }
         console.log(rew);
@@ -60,6 +61,7 @@ export const AddReview = ({gameId}: AddReviewProps) => {
                 <input type="search" onChange={e => setTitle(e.target.value)} />
                 <textarea onChange={e => setText(e.target.value)} />
                 <button type="submit">Add</button>
+                <input type="number" placeholder={"Score"} style={{marginTop: "0.5rem"}} onChange={e => setScore(e.target.value)} />
             </form>
         </section>
     )

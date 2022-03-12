@@ -13,7 +13,7 @@ export const BaseCard = ({game}: BaseCardProps) => {
 
     console.log("Score.... = " + game.avgscores);
     return (
-        <section className={styles.main}>
+        <section className={styles.main} style={{padding:"3rem"}}>
 
             <div className={styles.main_details}>
                 <div className={styles.image}>
