@@ -67,7 +67,7 @@ function App() {
                 <Header title="LOGO" username={username} filterHandler={filterHandler} loggedinHandler={loggedinHandler}  />
                 <Routes>
                     <Route path='/' element={<List games={filteredGames} setPage={SetPage} page={page} gameCount={gameCount}/>}/>
-                    <Route path='/gamedetails/:id' element={<GameDetails title="Game Details" />} />
+                    <Route path='/gamedetails/:id' element={<GameDetails />} />
                 </Routes>
             </div>
         );
@@ -76,7 +76,7 @@ function App() {
         <Header title="LOGO" username={username} filterHandler={filterHandler} loggedinHandler={loggedinHandler}  />
         <Routes>
             {/*<Route path='/' element={<List games={games} setPage={SetPage} page={page} gameCount={gameCount}/>}/>*/}
-            <Route path='/gamedetails/:id' element={<GameDetails title="Game Details" />} />
+            <Route path='/gamedetails/:id' element={<GameDetails />} />
         </Routes>
     </div>
 }
