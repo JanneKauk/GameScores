@@ -8,6 +8,11 @@ interface LoginProps {
     loggedIn: (name: string) => void;
 }
 
+/**
+ * @author Janne Kaukua, Jani Peltonen
+ * Component for registering a new user and logging in as an existing user.
+ * @param props
+ */
 const LoginMenu = (props: LoginProps): JSX.Element => {
     const [register, setRegister] = useState(false);
     const onClick = () => {

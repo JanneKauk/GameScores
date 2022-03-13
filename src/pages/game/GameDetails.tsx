@@ -22,8 +22,12 @@ interface Review {
     review: review[]
 }
 
-
-export const GameDetails = ({title}: GameDetailsProps) => {
+/**
+ * @author Jani Peltonen
+ * Component for showing details of a single game,
+ * adding reviews and showing reviews
+ */
+export const GameDetails = () => {
     const [game, setGame] = useState<Game["gameDetails"]>();
     const [reviews, setReviews] = useState<Review["review"]>();
     const parameter = useParams();

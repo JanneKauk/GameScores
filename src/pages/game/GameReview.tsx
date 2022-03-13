@@ -7,6 +7,12 @@ interface GameReviewProps {
     review: review;
 }
 
+/**
+ * @author Jani Peltonen
+ * Component for showing a single review of a single game.
+ * Used as a list item in the parent component
+ * @param review - review prop
+ */
 export const GameReview = ({review}: GameReviewProps) => {
 
     return (
