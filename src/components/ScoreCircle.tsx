@@ -8,7 +8,12 @@ interface IProps{
     game: game
 }
 
-
+/** ScoreCircle for showing average game rating, loaned and modified for our purposes from the following address.
+ * @source https://codepen.io/leandroamato/pen/jOWqrGe
+ * @param game
+ * @constructor
+ * @author https://codepen.io/leandroamato, edited by Janne Kaukua
+ */
 const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
     const ratingRef = useRef<HTMLDivElement>(null);
 
@@ -22,7 +27,6 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
                 <div className="rating" ref={ratingRef}>
                 <span>
                     {game.avgscores}
-                    {/*{adjustScore()}*/}
                 </span>
                 </div>
             </div>
@@ -30,13 +34,8 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
     }
 
     function adjustScore () {
-        // console.log("Current ref = " + ratingRef!.current!.innerText);
-        // console.log(ratingRef);
-        // console.log("ei menty ohi")
         try {
             if(ratingRef.current!.innerText === ""+game.avgscores) {
-
-
                 // Get content and get score as an int
                 let ratingContent = game.avgscores;
                 let ratingScore = ratingContent * 10;
@@ -75,8 +74,6 @@ const ScoreCircle: React.FC<IProps> = ({game}): JSX.Element => {
             {renderList()}
         </div>
     )
-
-
 }
 
 export default ScoreCircle

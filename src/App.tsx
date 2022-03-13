@@ -8,7 +8,10 @@ import List from "./components/GameList";
 import {game} from "./misc/interfaces";
 
 
-
+/** App
+ * @constructor
+ * @author Jani Peltonen, Janne Kaukua
+ */
 function App() {
     const [games, setGames] = useState<Games["game"]>([]);
     const [page, SetPage] = useState<number>(1)

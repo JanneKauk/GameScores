@@ -4,13 +4,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ScoreCircle from "./ScoreCircle";
 import {game} from "../misc/interfaces";
 import Pagination from "./Pagination";
-// import styles = module
 import {Link} from "react-router-dom";
 
+/** Creates a gameList based on received params
+ * For each entry in game[], map values to a <li> element and pass the current game to score circle for processing. Pagination calculates pages based on params.
+ * @param game
+ * @param setPage
+ * @param page
+ * @param gameCount
+ * @author Janne Kaukua
+ */
 // @ts-ignore
 const List = ({games: game, setPage, page, gameCount}) => {
     const gamesPerPage = 20
-    console.log("game avg: " + game[0].avgscores);
     const renderList = (): JSX.Element[] => {
         return game.map((game: game) => {
             return (
@@ -38,7 +44,6 @@ const List = ({games: game, setPage, page, gameCount}) => {
                         </div>
                     </li>
                 </Link>
-
             )
         })
     }

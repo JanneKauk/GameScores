@@ -1,5 +1,13 @@
 import CSS from "csstype";
 
+/** Creates a page system for ease of browsing and faster load times
+ * Changing pages will set game list to rerender with current page game selection by changing how the app queries the db.
+ * @param pages
+ * @param setPage
+ * @param page
+ * @constructor
+ * @author Janne Kaukua
+ */
 // @ts-ignore
 const Pagination = ({pages, setPage, page}) =>{
     const previous = () =>{

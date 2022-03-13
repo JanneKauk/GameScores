@@ -10,6 +10,12 @@ interface HeaderProps {
     filterHandler: (search: string) => void;
     loggedinHandler: (name: string) => void;
 }
+
+/** Header of the site
+ * @param props
+ * @constructor
+ * @Author Jani Peltonen, Janne Kaukua
+ */
 export const Header = (props: HeaderProps) => {
     const [showMenu, setShow] = useState(false)
     const onClick = () => setShow(!showMenu)
