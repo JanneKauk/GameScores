@@ -8,7 +8,10 @@ interface BaseCardProps {
     game: game
 }
 
-
+/**
+ * Component for showing details of a single game
+ * @param game - game object from prop
+ */
 export const BaseCard = ({game}: BaseCardProps) => {
 
     console.log("Score.... = " + game.avgscores);

@@ -15,6 +15,11 @@ interface IReview {
     gameId: number;
 }
 
+/**
+ * @author Jani Peltonen
+ * Component for adding a review for a single game
+ * @param game - gameId from prop
+ */
 export const AddReview = ({gameId}: AddReviewProps) => {
     const [title, setTitle] = useState<string>('');
     const [text, setText] = useState<string>('');
