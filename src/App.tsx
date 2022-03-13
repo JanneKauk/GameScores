@@ -16,6 +16,9 @@ function App() {
     const [username, setUsername] = useState<string>('');
     const [filteredGames, setFilteredGames] = useState<Games["game"]>([]);
 
+    const loggedinHandler = (name: string) => {
+        setUsername(name);
+    }
 
     useEffect(() => {
         if(sessionStorage.getItem('username')) {
@@ -58,7 +61,7 @@ function App() {
     if(games!.length > 0 && games!==null && filteredGames.length > 0){
         return (
             <div className="App">
-                <Header title="LOGO" username={username} filterHandler={filterHandler}  />
+                <Header title="LOGO" username={username} filterHandler={filterHandler} loggedinHandler={loggedinHandler}  />
                 <Routes>
                     <Route path='/' element={<List games={filteredGames} setPage={SetPage} page={page} gameCount={gameCount}/>}/>
                     <Route path='/gamedetails/:id' element={<GameDetails title="Game Details" />} />
@@ -67,7 +70,7 @@ function App() {
         );
     }
     return  <div className="App">
-        <Header title="LOGO" username={username} filterHandler={filterHandler}  />
+        <Header title="LOGO" username={username} filterHandler={filterHandler} loggedinHandler={loggedinHandler}  />
         <Routes>
             {/*<Route path='/' element={<List games={games} setPage={SetPage} page={page} gameCount={gameCount}/>}/>*/}
             <Route path='/gamedetails/:id' element={<GameDetails title="Game Details" />} />

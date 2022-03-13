@@ -14,7 +14,7 @@ const List = ({games: game, setPage, page, gameCount}) => {
     const renderList = (): JSX.Element[] => {
         return game.map((game: game) => {
             return (
-                <Link to={"/gamedetails/"+game.Id} style={{textDecoration: "none"}} >
+                <Link key={game.Id} to={"/gamedetails/"+game.Id} style={{textDecoration: "none"}} >
                     <li key={game.Id} className={'list-group-item d-flex justify-content-between'} style={{maxHeight:"12rem"}}>
                         <div style={{"display": "flex", "width": "100%"}}>
                             <img className="list-image" src={game.images.URL} alt={"Image of the game cover"}/>

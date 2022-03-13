@@ -8,6 +8,7 @@ interface HeaderProps {
     title: string;
     username: string;
     filterHandler: (search: string) => void;
+    loggedinHandler: (name: string) => void;
 }
 export const Header = (props: HeaderProps) => {
     const [showMenu, setShow] = useState(false)
@@ -18,6 +19,11 @@ export const Header = (props: HeaderProps) => {
         props.filterHandler(event.target.value);
     }
 
+    const loggedInHandler = (name: string) => {
+        loggedInHandler(name);
+
+    }
+
     return (
         <header className="App-header">
             <NavLink className={styles.title} to="/">{props.title}</NavLink>
@@ -26,8 +32,8 @@ export const Header = (props: HeaderProps) => {
             </div>
             <nav className={styles.nav} style={{margin:"0 1rem 0 0"}}>
                 {props.username.length === 0 && <button style={buttStyle} onClick={onClick}>Login/Signup</button>}
-                {props.username.length > 0 && <button style={buttStyle}>{props.username}</button>}
-                {showMenu && <LoginMenu/>}
+                {props.username.length > 0 && <button style={buttStyle} onClick={onClick}>{props.username.localeCompare('') !== 0 ? props.username : "aa"}</button>}
+                {showMenu && <LoginMenu loggedIn={loggedInHandler} />}
             </nav>
         </header>
     )
